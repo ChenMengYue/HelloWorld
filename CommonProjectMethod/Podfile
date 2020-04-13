@@ -1,0 +1,11 @@
+target 'CommonProjectMethod' do
+
+pod 'AFNetworking'
+pod 'MBProgressHUD', '~> 1.1.0'
+pod 'Masonry', '~> 1.1.0'
+pod 'MJRefresh'
+
+inhibit_all_warnings!
+end
+
+

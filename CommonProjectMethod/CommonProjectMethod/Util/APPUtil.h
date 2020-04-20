@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface APPUtil : NSObject
 
 + (void)callWithPhone:(NSString *)phone;
+
+
++(NSBundle *)getResourceByFramework:(NSString *)frameworkName resourceName:(NSString *)resourceName;
 @end
 
 NS_ASSUME_NONNULL_END

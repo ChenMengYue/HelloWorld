@@ -17,8 +17,6 @@ FOUNDATION_EXPORT const unsigned char CommonProjectMethodVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <CommonProjectMethod/PublicHeader.h>
 
 
-
-
 //三方
 //1
 #import "RefreshPagingOfCollectionView.h"
@@ -26,12 +24,9 @@ FOUNDATION_EXPORT const unsigned char CommonProjectMethodVersionString[];
 #import "RefreshPagingDelegate.h"
 
 
-
 //适配
 #import "CmyAppAdapterScreenUtil.h"
 #import "AppPermissionManager.h"
-
-
 
 
 //常用分类
@@ -73,10 +68,5 @@ FOUNDATION_EXPORT const unsigned char CommonProjectMethodVersionString[];
 
 
 #import "CommonProjectDefines.h"
-
-
-
-
-
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+C_BundleResource.h"
+#import "APPUtil.h"
 
 
 @implementation UIImage (C_BundleResource)
@@ -20,12 +21,14 @@
 //        if ([[NSFileManager defaultManager]fileExistsAtPath:filepath]) {
 //            return image;
 //        }
-        UIImage *image = [UIImage imageWithContentsOfFile:filepath];
-        if (image) {
-            return image;
-        }
-        NSString *realImageName=[[imageName componentsSeparatedByString:@"/"] lastObject];
-        return [self imageNamed:realImageName];
+
+    UIImage *image = [UIImage imageWithContentsOfFile:filepath];
+    if (image) {
+        return image;
+    }
+       
+    NSString *realImageName=[[imageName componentsSeparatedByString:@"/"] lastObject];
+    return [self imageNamed:realImageName];
 }
 
 //+(UIImage *)imageNamed:(NSString *)imageName bundle:(NSString *)bundle direct:(NSString *)directUrl{
@@ -41,9 +44,17 @@
 //}
 
 +(UIImage *)imageDefaultBundleNamed:(NSString *)imageName{
-    return [self imageNamed:imageName bundle:@"ImageResource"];
+//    return [self imageNamed:imageName bundle:@"ImageResource"];
+    return [self imageOfFrameWork:@"CommonProjectMethod" bundleName:@"ImageResource" imageName:imageName];
 }
 
+
+
++(UIImage *)imageOfFrameWork:(NSString *)framework bundleName:(NSString *)bundleName imageName:(NSString *)imageName{
+    NSBundle *imageBundle = [APPUtil getResourceByFramework:framework resourceName:bundleName];
+    UIImage *iconImage = [UIImage imageNamed:imageName inBundle:imageBundle compatibleWithTraitCollection:nil];
+    return iconImage;
+}
 
 
 @end

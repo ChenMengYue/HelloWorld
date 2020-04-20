@@ -29,4 +29,16 @@
     }
 }
 
++(NSString *)getFrameworkPathByName:(NSString *)frameworkName{
+    return [[NSBundle mainBundle] pathForResource:frameworkName ofType:@"framework"];
+}
+
++(NSBundle *)getFrameWorkBundleByName:(NSString *)frameworkName{
+    return [NSBundle bundleWithPath:[self getFrameworkPathByName:frameworkName]];
+}
+
++(NSBundle *)getResourceByFramework:(NSString *)frameworkName resourceName:(NSString *)resourceName{
+    return [NSBundle bundleWithPath:[[NSBundle bundleWithPath:[self getFrameworkPathByName:frameworkName]] pathForResource:resourceName ofType:@"bundle"]];
+}
+
 @end

@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(UIImage *)imageDefaultBundleNamed:(NSString *)imageName;
 
+
++(UIImage *)imageOfFrameWork:(NSString *)framework bundleName:(NSString *)bundleName imageName:(NSString *)imageName;
+
 @end
 
 NS_ASSUME_NONNULL_END
